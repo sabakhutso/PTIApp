@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">PTIApplicationV2</string>
+    <string name="pti_home_name">პტი</string>
+    <string name="description">პერიოდული ტექნიკური ინსპექტირება</string>
+    <string name="visit_button_text_name">ვიზიტის დაჯავშვნა</string>
+    <string name="calculate_date">თარიღის გამოთვლა</string>
+    <string name="suggestion_text">ან</string>
+</resources>
