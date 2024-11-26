@@ -41,6 +41,7 @@
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:layout_margin="16dp"
+        android:background="@color/cardview_dark_background"
         app:cardCornerRadius="12dp"
         app:cardElevation="2dp"
         app:layout_constraintEnd_toEndOf="parent"
