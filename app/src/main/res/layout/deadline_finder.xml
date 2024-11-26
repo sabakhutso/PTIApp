@@ -2,7 +2,6 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#6BD5D7"
@@ -54,13 +53,15 @@
             android:gravity="center_horizontal"
             android:orientation="vertical">
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/container_image_view"
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/container_date_finder"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="30dp"
-                android:src="@drawable/car_image"
+                android:textAlignment="center"
+                android:text="@string/pti_date_finder"
+                android:textColor="#000000"
                 app:layout_constraintBottom_toTopOf="@+id/material_card_container"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -106,6 +107,5 @@
         </LinearLayout>
 
     </com.google.android.material.card.MaterialCardView>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
