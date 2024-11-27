@@ -98,7 +98,7 @@
                 android:layout_marginHorizontal="30dp"
                 android:layout_marginBottom="16dp"
                 android:backgroundTint="#6BD5D7"
-                android:text="@string/calculate_date"
+                android:text="@string/visit_button_text_name"
                 android:textColor="@color/white"
                 app:cornerRadius="5dp"
                 app:rippleColor="@color/white"
