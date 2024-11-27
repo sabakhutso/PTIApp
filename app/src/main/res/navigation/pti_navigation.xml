@@ -9,6 +9,16 @@
         android:id="@+id/ptiIntroFragment"
         android:name="com.example.ptiapplicationv2.intro.IntroFragment"
         android:label="pti_intro_fragment"
-        tools:layout="@layout/fragment_intro" />
+        tools:layout="@layout/fragment_intro" >
+        <action
+            android:id="@+id/action_ptiIntroFragment_to_calculateDateFragment"
+            app:destination="@id/calculateDateFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/calculateDateFragment"
+        android:name="com.example.ptiapplicationv2.caclucatedate.CalculateDateFragment"
+        android:label="calculate_date_fragment"
+        tools:layout="@layout/fragment_calculate_date" />
 
 </navigation>
