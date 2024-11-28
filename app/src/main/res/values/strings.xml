@@ -10,5 +10,6 @@
     <string name="password">"პაროლი"</string>
     <string name="authorization">ავტორიზაცია</string>
     <string name="forgot_password">დაგავიწყდა პაროლი ?</string>
+    <string name="register">რეგისტრაცია</string>
     <string name="log_in">შესვლა</string>
 </resources>

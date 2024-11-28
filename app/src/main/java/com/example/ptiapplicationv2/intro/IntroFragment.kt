@@ -9,16 +9,13 @@ import com.example.ptiapplicationv2.databinding.FragmentIntroBinding
 
 class IntroFragment : CorePtiFragment<FragmentIntroBinding>(FragmentIntroBinding::inflate) {
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) = with(binding) {
         super.onViewCreated(view, savedInstanceState)
-
-        binding.calculateDateButton.setOnClickListener {
-            findNavController().navigate(
-                R.id.action_ptiIntroFragment_to_calculateDateFragment
-            )
+        calculateDateButton.setOnClickListener {
+            findNavController().navigate(R.id.action_ptiIntroFragment_to_calculateDateFragment)
         }
-        binding.visitButton.setOnClickListener {
-            // TODO navigate to different page
+        visitButton.setOnClickListener {
+            findNavController().navigate(R.id.action_ptiIntroFragment_to_authorizationFragment)
         }
     }
 }
