@@ -2,8 +2,13 @@
     <string name="app_name">PTIApplicationV2</string>
     <string name="pti_home_name">პტი</string>
     <string name="description">პერიოდული ტექნიკური ინსპექტირება</string>
-    <string name="visit_button_text_name">ვიზიტის დაჯავშვნა</string>
+    <string name="visit_button_text_name">ვიზიტის დაჯავშნა</string>
     <string name="calculate_date">თარიღის გამოთვლა</string>
     <string name="suggestion_text">ან</string>
-    <string name="pti_date_finder">გაიგეთ როდის უწევს თქვენს ავტომობილს ტექინსპექტირება</string>=
+    <string name="pti_date_finder">გაიგეთ როდის უწევს თქვენს ავტომობილს ტექინსპექტირება</string>
+    <string name="email">"ელ-ფოსტა"</string>
+    <string name="password">"პაროლი"</string>
+    <string name="authorization">ავტორიზაცია</string>
+    <string name="forgot_password">დაგავიწყდა პაროლი ?</string>
+    <string name="log_in">შესვლა</string>
 </resources>
