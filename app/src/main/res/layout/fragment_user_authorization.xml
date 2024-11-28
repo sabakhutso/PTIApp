@@ -86,16 +86,21 @@
                 android:text="@string/register"
                 android:textStyle="bold" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_login"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/spacing_16"
                 android:layout_marginTop="@dimen/spacing_16"
                 android:layout_marginBottom="10dp"
-                android:backgroundTint="#673AB7"
                 android:text="@string/log_in"
-                android:textStyle="bold" />
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                app:backgroundTint="#6BD5D7"
+                app:cornerRadius="5dp"
+                app:rippleColor="@color/white"
+                app:strokeColor="@color/black" />
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 </FrameLayout>
