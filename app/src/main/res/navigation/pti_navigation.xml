@@ -9,10 +9,13 @@
         android:id="@+id/ptiIntroFragment"
         android:name="com.example.ptiapplicationv2.intro.IntroFragment"
         android:label="pti_intro_fragment"
-        tools:layout="@layout/fragment_intro" >
+        tools:layout="@layout/fragment_intro">
         <action
             android:id="@+id/action_ptiIntroFragment_to_calculateDateFragment"
             app:destination="@id/calculateDateFragment" />
+        <action
+            android:id="@+id/action_ptiIntroFragment_to_authorizationFragment"
+            app:destination="@id/authorizationFragment" />
     </fragment>
 
     <fragment
@@ -20,5 +23,11 @@
         android:name="com.example.ptiapplicationv2.caclucatedate.CalculateDateFragment"
         android:label="calculate_date_fragment"
         tools:layout="@layout/fragment_calculate_date" />
+
+    <fragment
+        android:id="@+id/authorizationFragment"
+        android:name="com.example.ptiapplicationv2.user_authorization.AuthorizationFragment"
+        android:label="AuthorizationFragment"
+        tools:layout="@layout/fragment_user_authorization" />
 
 </navigation>
