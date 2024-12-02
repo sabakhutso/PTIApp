@@ -18,7 +18,8 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TextContrastCheck" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/ptiDescription"
@@ -33,14 +34,15 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ptiHeaderTextView" />
+        app:layout_constraintTop_toBottomOf="@id/ptiHeaderTextView"
+        tools:ignore="TextContrastCheck" />
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/material_card_container"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:layout_margin="16dp"
-        app:cardCornerRadius="12dp"
+        android:layout_height="400dp"
+        android:layout_margin="@dimen/spacing_16"
+        app:cardCornerRadius="@dimen/spacing_12"
         app:cardElevation="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -53,22 +55,66 @@
             android:gravity="center_horizontal"
             android:orientation="vertical">
 
+
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/container_date_finder"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
+                android:layout_marginHorizontal="@dimen/spacing_16"
                 android:layout_marginTop="30dp"
-                android:textAlignment="center"
+                android:layout_marginBottom="20dp"
                 android:text="@string/pti_date_finder"
+                android:textAlignment="center"
                 android:textColor="#000000"
+                android:textSize="20dp"
                 app:layout_constraintBottom_toTopOf="@+id/material_card_container"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ptiDescription"
-                app:layout_constraintVertical_bias="0" />
+                app:layout_constraintVertical_bias="0"
+                tools:ignore="SpUsage,TextSizeCheck" />
 
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/email"
+                    android:layout_width="260dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="@dimen/spacing_16"
+                    android:layout_marginTop="20dp"
+                    android:hint="@string/license_plate" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Spinner
+                android:id="@+id/vehicle_category"
+                android:layout_width="260dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/spacing_15"
+                android:layout_marginBottom="@dimen/spacing_15"
+                android:minHeight="48dp"
+                android:hint="@string/vehicle_category" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/visit_button"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="#6BD5D7"
+                android:text="@string/calculate_date"
+                android:textColor="@color/white"
+                app:cornerRadius="5dp"
+                app:rippleColor="@color/white"
+                app:strokeColor="@color/black"
+                tools:ignore="TextSizeCheck,TextContrastCheck" />
         </LinearLayout>
+
 
     </com.google.android.material.card.MaterialCardView>
 

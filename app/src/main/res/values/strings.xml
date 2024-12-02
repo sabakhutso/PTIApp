@@ -12,4 +12,8 @@
     <string name="forgot_password">დაგავიწყდა პაროლი ?</string>
     <string name="register">რეგისტრაცია</string>
     <string name="log_in">შესვლა</string>
+    <string name="name_surname">სახელი და გვარი</string>
+    <string name="phone_number">ტელეფონის ნომერი</string>
+    <string name="license_plate">სახელმწიფო ნომერი</string>
+    <string name="vehicle_category">ავტომობილის კატეგორია</string>
 </resources>
