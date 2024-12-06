@@ -96,8 +96,8 @@
                 android:layout_gravity="center"
                 android:layout_marginHorizontal="@dimen/spacing_32"
                 android:layout_marginTop="@dimen/spacing_15"
+                android:prompt="@string/vehicle_category"
                 android:layout_marginBottom="@dimen/spacing_15"
-                android:hint="@string/vehicle_category"
                 android:minHeight="48dp" />
 
             <com.google.android.material.button.MaterialButton
