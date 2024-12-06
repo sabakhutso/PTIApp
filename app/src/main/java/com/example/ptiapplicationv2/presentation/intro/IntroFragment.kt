@@ -2,20 +2,23 @@ package com.example.ptiapplicationv2.presentation.intro
 
 import android.os.Bundle
 import android.view.View
-import com.example.ptiapplicationv2.R
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
-import com.example.ptiapplicationv2.presentation.core.CorePtiFragment
 import com.example.ptiapplicationv2.databinding.FragmentIntroBinding
+import com.example.ptiapplicationv2.presentation.core.CorePtiFragment
+import kotlinx.coroutines.launch
 
 class IntroFragment : CorePtiFragment<FragmentIntroBinding>(FragmentIntroBinding::inflate) {
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) = with(binding) {
+    private val viewModel: IntroViewModel by viewModels()
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?): Unit = with(binding) {
         super.onViewCreated(view, savedInstanceState)
-        calculateDateButton.setOnClickListener {
-            findNavController().navigate(R.id.action_ptiIntroFragment_to_calculateDateFragment)
-        }
-        visitButton.setOnClickListener {
-            findNavController().navigate(R.id.action_ptiIntroFragment_to_authorizationFragment)
+        calculateDateButton.setOnClickListener { viewModel.openCalculateDatePage() }
+        visitButton.setOnClickListener { viewModel.openAuthorizationPage() }
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewModel.actionObserver.collect { event -> event.apply(findNavController()) }
         }
     }
 }
