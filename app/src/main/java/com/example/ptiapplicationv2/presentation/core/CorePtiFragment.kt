@@ -1,4 +1,4 @@
-package com.example.ptiapplicationv2.core
+package com.example.ptiapplicationv2.presentation.core
 
 import android.os.Bundle
 import android.view.LayoutInflater

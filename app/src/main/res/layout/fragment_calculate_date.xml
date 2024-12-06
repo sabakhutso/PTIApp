@@ -80,10 +80,10 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/email"
-                    android:layout_width="260dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginHorizontal="@dimen/spacing_16"
+                    android:layout_marginHorizontal="@dimen/spacing_32"
                     android:layout_marginTop="20dp"
                     android:hint="@string/license_plate" />
 
@@ -91,20 +91,21 @@
 
             <Spinner
                 android:id="@+id/vehicle_category"
-                android:layout_width="260dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginHorizontal="@dimen/spacing_32"
                 android:layout_marginTop="@dimen/spacing_15"
                 android:layout_marginBottom="@dimen/spacing_15"
-                android:minHeight="48dp"
-                android:hint="@string/vehicle_category" />
+                android:hint="@string/vehicle_category"
+                android:minHeight="48dp" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/visit_button"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                android:layout_width="250dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="30dp"
+                android:layout_marginHorizontal="@dimen/spacing_32"
                 android:layout_marginBottom="16dp"
                 android:backgroundTint="#6BD5D7"
                 android:text="@string/calculate_date"

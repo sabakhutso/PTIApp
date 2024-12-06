@@ -1,10 +1,10 @@
-package com.example.ptiapplicationv2.intro
+package com.example.ptiapplicationv2.presentation.intro
 
 import android.os.Bundle
 import android.view.View
 import com.example.ptiapplicationv2.R
 import androidx.navigation.fragment.findNavController
-import com.example.ptiapplicationv2.core.CorePtiFragment
+import com.example.ptiapplicationv2.presentation.core.CorePtiFragment
 import com.example.ptiapplicationv2.databinding.FragmentIntroBinding
 
 class IntroFragment : CorePtiFragment<FragmentIntroBinding>(FragmentIntroBinding::inflate) {

@@ -1,8 +1,8 @@
-package com.example.ptiapplicationv2.caclucatedate
+package com.example.ptiapplicationv2.presentation.caclucatedate
 
 import android.os.Bundle
 import android.view.View
-import com.example.ptiapplicationv2.core.CorePtiFragment
+import com.example.ptiapplicationv2.presentation.core.CorePtiFragment
 import com.example.ptiapplicationv2.databinding.FragmentCalculateDateBinding
 
 class CalculateDateFragment :
