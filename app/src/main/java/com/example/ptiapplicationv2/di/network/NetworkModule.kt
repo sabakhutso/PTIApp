@@ -15,6 +15,7 @@ import javax.inject.Singleton
 
 
 private const val TIMEOUT = 15L
+private const val PTI_BASE_URL = "https://epti.ge/api/deadlines/pti/"
 
 @Module
 @InstallIn(SingletonComponent::class)
@@ -31,14 +32,11 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideRetrofitClient(okHttpClient: OkHttpClient): Retrofit =
-        // TODO define correct base url for service call
-        Retrofit.Builder().baseUrl("https://epti.ge/api/deadlines/pti/").addConverterFactory(
-            MoshiConverterFactory.create(
-                Moshi.Builder().addLast(KotlinJsonAdapterFactory()).build()
-            )
-        ).client(okHttpClient).build()
-
+    fun provideRetrofitClient(
+        okHttpClient: OkHttpClient
+    ): Retrofit = Retrofit.Builder().baseUrl(PTI_BASE_URL).addConverterFactory(
+        MoshiConverterFactory.create(Moshi.Builder().addLast(KotlinJsonAdapterFactory()).build())
+    ).client(okHttpClient).build()
 
     @Provides
     @Singleton
