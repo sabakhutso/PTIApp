@@ -69,8 +69,6 @@ dependencies {
 
     implementation(libs.moshi)
     implementation(libs.moshi.kotlin)
-    implementation(libs.converter.gson)
-    implementation(libs.gson)
     implementation(libs.retrofit2.converter.gson)
 
 }
