@@ -58,8 +58,20 @@ dependencies {
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
 
+    // Hilt
     implementation(libs.hilt.android)
     kapt(libs.hilt.android.compiler)
+
+    // Logging Interceptor
+    implementation(libs.squareup.logging.interceptor)
+    implementation(libs.squareup.converter.moshi)
+
+
+    implementation(libs.moshi)
+    implementation(libs.moshi.kotlin)
+    implementation(libs.converter.gson)
+    implementation(libs.gson)
+    implementation(libs.retrofit2.converter.gson)
 
 }
 
