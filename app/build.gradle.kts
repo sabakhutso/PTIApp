@@ -65,6 +65,7 @@ dependencies {
     // Logging Interceptor
     implementation(libs.squareup.logging.interceptor)
     implementation(libs.squareup.converter.moshi)
+    implementation(libs.moshi.adapters)
 
     // Retrofit + Moshi
     implementation(libs.moshi)

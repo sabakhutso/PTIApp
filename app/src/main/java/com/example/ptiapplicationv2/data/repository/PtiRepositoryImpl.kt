@@ -6,7 +6,7 @@ import com.example.ptiapplicationv2.di.DispatcherProvider
 import com.example.ptiapplicationv2.di.network.PtiService
 import com.example.ptiapplicationv2.domain.PtiRepository
 import com.example.ptiapplicationv2.domain.model.CalculateDeadLineResult
-import com.example.ptiapplicationv2.domain.model.CalculateDeadLineResult.SagencyResult
+import com.example.ptiapplicationv2.domain.model.CalculateDeadLineResult.SagencyResultDomain
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
@@ -41,14 +41,18 @@ fun CalculateDeadLineApiModel.toDomain(): CalculateDeadLineResult {
     )
 }
 
-fun SagencyResultApiModel.toDomain(): SagencyResult {
-    return SagencyResult(
-        seatsCount = seatsCount,
-        message = message,
-        ptiEndDate = ptiEndDate,
-        ptiStartDate = ptiStartDate,
-        ptiStatus = ptiStatus,
-        requestDate = requestDate,
-        techStatus = techStatus
-    )
+fun SagencyResultApiModel.toDomain(): SagencyResultDomain {
+    return when (this) {
+        is SagencyResultApiModel.SagencyResult -> SagencyResultDomain.SagencyResult(
+            seatsCount = seatsCount,
+            message = message,
+            ptiEndDate = ptiEndDate,
+            ptiStartDate = ptiStartDate,
+            ptiStatus = ptiStatus,
+            requestDate = requestDate,
+            techStatus = techStatus
+        )
+
+        is SagencyResultApiModel.StringData -> SagencyResultDomain.StringDomain(value)
+    }
 }

@@ -14,8 +14,9 @@ class CalculateDateViewModel @Inject constructor(
 ) : ViewModel() {
 
     fun init() {
+        val random = listOf<String>("uu657vv", "sadsda").random()
         viewModelScope.launch {
-            val result = ptiRepository.calculateDeadLine(carNumber = "uu657vv")
+            val result = ptiRepository.calculateDeadLine(carNumber = random)
             result.fold(onSuccess = { result ->
                 Log.d("vaimee", result.toString())
             }, onFailure = { error ->

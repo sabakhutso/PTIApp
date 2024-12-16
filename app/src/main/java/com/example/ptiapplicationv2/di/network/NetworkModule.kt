@@ -1,5 +1,6 @@
 package com.example.ptiapplicationv2.di.network
 
+import com.example.ptiapplicationv2.di.network.adapters.SagencyResultJsonAdapter
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
@@ -38,6 +39,7 @@ object NetworkModule {
         MoshiConverterFactory.create(
             Moshi.Builder()
                 .addLast(KotlinJsonAdapterFactory())
+                .add(SagencyResultJsonAdapter())
                 .build()
         )
     ).client(okHttpClient).build()
@@ -46,4 +48,5 @@ object NetworkModule {
     @Singleton
     fun provideRetrofitCurrency(retrofitClient: Retrofit): PtiService =
         retrofitClient.create(PtiService::class.java)
+
 }
