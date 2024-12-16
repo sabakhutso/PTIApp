@@ -35,7 +35,11 @@ object NetworkModule {
     fun provideRetrofitClient(
         okHttpClient: OkHttpClient
     ): Retrofit = Retrofit.Builder().baseUrl(PTI_BASE_URL).addConverterFactory(
-        MoshiConverterFactory.create(Moshi.Builder().addLast(KotlinJsonAdapterFactory()).build())
+        MoshiConverterFactory.create(
+            Moshi.Builder()
+                .addLast(KotlinJsonAdapterFactory())
+                .build()
+        )
     ).client(okHttpClient).build()
 
     @Provides

@@ -5,9 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.ptiapplicationv2.domain.PtiRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 @HiltViewModel
@@ -17,14 +15,12 @@ class CalculateDateViewModel @Inject constructor(
 
     fun init() {
         viewModelScope.launch {
-            withContext(Dispatchers.IO) {
-                val result = ptiRepository.calculateDeadLine(carNumber = "uu657vv")
-                result.fold(onSuccess = { result ->
-                    Log.d("vaimee", result.toString())
-                }, onFailure = { error ->
-                    Log.d("vaimee", error.toString())
-                })
-            }
+            val result = ptiRepository.calculateDeadLine(carNumber = "uu657vv")
+            result.fold(onSuccess = { result ->
+                Log.d("vaimee", result.toString())
+            }, onFailure = { error ->
+                Log.d("vaimee", error.toString())
+            })
         }
     }
 }
