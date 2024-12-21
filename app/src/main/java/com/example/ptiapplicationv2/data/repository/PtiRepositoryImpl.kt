@@ -1,12 +1,10 @@
 package com.example.ptiapplicationv2.data.repository
 
-import com.example.ptiapplicationv2.data.model.CalculateDeadLineApiModel
-import com.example.ptiapplicationv2.data.model.SagencyResultApiModel
+import com.example.ptiapplicationv2.data.mapper.toDomain
 import com.example.ptiapplicationv2.di.DispatcherProvider
 import com.example.ptiapplicationv2.di.network.PtiService
 import com.example.ptiapplicationv2.domain.PtiRepository
 import com.example.ptiapplicationv2.domain.model.CalculateDeadLineResult
-import com.example.ptiapplicationv2.domain.model.CalculateDeadLineResult.SagencyResultDomain
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
@@ -29,30 +27,5 @@ class PtiRepositoryImpl @Inject constructor(
         } catch (e: CancellationException) {
             throw e
         }
-    }
-}
-
-fun CalculateDeadLineApiModel.toDomain(): CalculateDeadLineResult {
-    return CalculateDeadLineResult(
-        govNum = govNum,
-        sagencyResult = sagencyResult.toDomain(),
-        status = status,
-        vehicleId = vehicleId
-    )
-}
-
-fun SagencyResultApiModel.toDomain(): SagencyResultDomain {
-    return when (this) {
-        is SagencyResultApiModel.SagencyResult -> SagencyResultDomain.SagencyResult(
-            seatsCount = seatsCount,
-            message = message,
-            ptiEndDate = ptiEndDate,
-            ptiStartDate = ptiStartDate,
-            ptiStatus = ptiStatus,
-            requestDate = requestDate,
-            techStatus = techStatus
-        )
-
-        is SagencyResultApiModel.StringData -> SagencyResultDomain.StringDomain(value)
     }
 }

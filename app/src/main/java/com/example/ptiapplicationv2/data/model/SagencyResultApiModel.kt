@@ -6,10 +6,10 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 sealed class SagencyResultApiModel {
     @JsonClass(generateAdapter = true)
-    data class StringData(val value: String) : SagencyResultApiModel()
+    data class ErrorModelApi(val value: String) : SagencyResultApiModel()
 
     @JsonClass(generateAdapter = true)
-    data class SagencyResult(
+    data class SagencyResultApi(
         @Json(name = "SeatsCount")
         val seatsCount: Int,
         val message: String,

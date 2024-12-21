@@ -1,8 +1,8 @@
 package com.example.ptiapplicationv2.di.network.adapters
 
 import com.example.ptiapplicationv2.data.model.SagencyResultApiModel
-import com.example.ptiapplicationv2.data.model.SagencyResultApiModel.SagencyResult
-import com.example.ptiapplicationv2.data.model.SagencyResultApiModel.StringData
+import com.example.ptiapplicationv2.data.model.SagencyResultApiModel.SagencyResultApi
+import com.example.ptiapplicationv2.data.model.SagencyResultApiModel.ErrorModelApi
 import com.squareup.moshi.FromJson
 import com.squareup.moshi.JsonAdapter
 import com.squareup.moshi.JsonReader
@@ -14,22 +14,22 @@ class SagencyResultJsonAdapter {
     @FromJson
     fun fromJson(
         jsonReader: JsonReader,
-        delegate: JsonAdapter<SagencyResult>
+        delegate: JsonAdapter<SagencyResultApi>
     ): SagencyResultApiModel? = if (jsonReader.peek() == JsonReader.Token.BEGIN_OBJECT) {
         delegate.fromJson(jsonReader)
     } else {
-        StringData(jsonReader.nextString())
+        ErrorModelApi(jsonReader.nextString())
     }
 
     @ToJson
     fun toJson(
         jsonWriter: JsonWriter,
         data: SagencyResultApiModel,
-        delegate: JsonAdapter<SagencyResult>
+        delegate: JsonAdapter<SagencyResultApi>
     ) {
         when (data) {
-            is SagencyResult -> delegate.toJson(jsonWriter, data)
-            is StringData -> jsonWriter.value(data.value)
+            is SagencyResultApi -> delegate.toJson(jsonWriter, data)
+            is ErrorModelApi -> jsonWriter.value(data.value)
         }
     }
 }

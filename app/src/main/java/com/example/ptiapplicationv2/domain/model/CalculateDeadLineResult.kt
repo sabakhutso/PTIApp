@@ -17,7 +17,7 @@ data class CalculateDeadLineResult(
             val techStatus: Int
         ) : SagencyResultDomain()
 
-        data class StringDomain(
+        data class ErrorDomain(
             val value: String
         ) : SagencyResultDomain()
     }
