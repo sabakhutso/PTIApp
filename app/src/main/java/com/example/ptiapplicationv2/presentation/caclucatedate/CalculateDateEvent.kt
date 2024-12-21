@@ -9,41 +9,52 @@ import com.example.ptiapplicationv2.domain.model.CalculateDeadLineResult.Sagency
 import com.example.ptiapplicationv2.domain.model.CalculateDeadLineResult.SagencyResultDomain.SagencyResult
 
 interface CalculateDateEvent {
+
     fun apply(navController: NavController, context: Context, binding: FragmentCalculateDateBinding)
 
-    data class NavigateToDetails(
-        private val successData: SagencyResult
-    ) : CalculateDateEvent {
+    abstract class AbstractCalculateDate(private val errorVisible: Boolean) : CalculateDateEvent {
         override fun apply(
             navController: NavController,
             context: Context,
             binding: FragmentCalculateDateBinding
         ) {
-            binding.errorText.isVisible = false
+            binding.errorText.isVisible = errorVisible
+        }
+    }
+
+    data class NavigateToDetails(
+        private val successData: SagencyResult
+    ) : AbstractCalculateDate(errorVisible = false) {
+        override fun apply(
+            navController: NavController,
+            context: Context,
+            binding: FragmentCalculateDateBinding
+        ) {
+            super.apply(navController, context, binding)
             Toast.makeText(context, "Success navigation", Toast.LENGTH_LONG).show()
         }
     }
 
     data class NavigateToErrorPage(
         private val errorDomain: ErrorDomain
-    ) : CalculateDateEvent {
+    ) : AbstractCalculateDate(errorVisible = false) {
         override fun apply(
             navController: NavController,
             context: Context,
             binding: FragmentCalculateDateBinding
         ) {
-            binding.errorText.isVisible = false
+            super.apply(navController, context, binding)
             Toast.makeText(context, "Error navigation", Toast.LENGTH_LONG).show()
         }
     }
 
-    data object ShowErrorToast : CalculateDateEvent {
+    data object ShowErrorToast : AbstractCalculateDate(errorVisible = true) {
         override fun apply(
             navController: NavController,
             context: Context,
             binding: FragmentCalculateDateBinding
         ) {
-            binding.errorText.isVisible = true
+            super.apply(navController, context, binding)
             Toast.makeText(
                 context,
                 "Service error, or internet connection error",
