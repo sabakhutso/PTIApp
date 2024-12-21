@@ -3,7 +3,8 @@ package com.example.ptiapplicationv2.presentation.caclucatedate
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.ptiapplicationv2.domain.PtiRepository
-import com.example.ptiapplicationv2.domain.model.CalculateDeadLineResult.SagencyResultDomain
+import com.example.ptiapplicationv2.domain.model.CalculateDeadLineResult.SagencyResultDomain.SagencyResult
+import com.example.ptiapplicationv2.domain.model.CalculateDeadLineResult.SagencyResultDomain.ErrorDomain
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.Flow
@@ -26,19 +27,9 @@ class CalculateDateViewModel @Inject constructor(
         val result = ptiRepository.calculateDeadLine(carNumber = cardNumber)
         result.fold(onSuccess = { result ->
             when (result.sagencyResult) {
-                is SagencyResultDomain.ErrorDomain -> _events.trySend(
-                    NavigateToErrorPage(errorDomain = result.sagencyResult)
-                )
-
-                is SagencyResultDomain.SagencyResult -> {
-                    _events.trySend(
-                        NavigateToDetails(successData = result.sagencyResult)
-                    )
-                }
+                is ErrorDomain -> _events.trySend(NavigateToErrorPage(errorDomain = result.sagencyResult))
+                is SagencyResult -> _events.trySend(NavigateToDetails(successData = result.sagencyResult))
             }
-        }, onFailure = { error ->
-            _events.trySend(element = ShowErrorToast)
-        })
+        }, onFailure = { error -> _events.trySend(element = ShowErrorToast) })
     }
-
 }

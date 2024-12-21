@@ -43,7 +43,8 @@ class CalculateDateFragment :
             ).collect { event ->
                 event.apply(
                     navController = findNavController(),
-                    context = requireContext()
+                    context = requireContext(),
+                    binding = binding
                 )
             }
         }

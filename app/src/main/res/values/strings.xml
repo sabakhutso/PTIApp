@@ -16,4 +16,5 @@
     <string name="phone_number">ტელეფონის ნომერი</string>
     <string name="license_plate">სახელმწიფო ნომერი</string>
     <string name="vehicle_category">ავტომობილის კატეგორია</string>
+    <string name="general_error_text">დაფიქსირდა ტექნიკური შეცდომა, თავიდან ცადეთ</string>
 </resources>

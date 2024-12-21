@@ -52,6 +52,7 @@
             android:id="@+id/button_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
             android:gravity="center_horizontal"
             android:orientation="vertical">
 
@@ -96,9 +97,9 @@
                 android:layout_gravity="center"
                 android:layout_marginHorizontal="@dimen/spacing_32"
                 android:layout_marginTop="@dimen/spacing_15"
-                android:prompt="@string/vehicle_category"
                 android:layout_marginBottom="@dimen/spacing_15"
-                android:minHeight="48dp" />
+                android:minHeight="48dp"
+                android:prompt="@string/vehicle_category" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/visit_button"
@@ -114,6 +115,24 @@
                 app:rippleColor="@color/white"
                 app:strokeColor="@color/black"
                 tools:ignore="TextSizeCheck,TextContrastCheck" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/error_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/spacing_16"
+                android:text="@string/general_error_text"
+                android:textAlignment="center"
+                android:textColor="#DE1010"
+                android:textSize="16sp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@+id/material_card_container"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ptiDescription"
+                app:layout_constraintVertical_bias="0"
+                tools:ignore="SpUsage,TextSizeCheck" />
+
         </LinearLayout>
 
 
