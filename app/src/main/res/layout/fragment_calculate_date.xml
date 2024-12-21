@@ -80,7 +80,7 @@
                 android:layout_height="wrap_content">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/government_input"
+                    android:id="@+id/government_car_input"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -90,16 +90,22 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <Spinner
-                android:id="@+id/vehicle_category"
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginHorizontal="@dimen/spacing_32"
-                android:layout_marginTop="@dimen/spacing_15"
-                android:layout_marginBottom="@dimen/spacing_15"
-                android:minHeight="48dp"
-                android:prompt="@string/vehicle_category" />
+                android:layout_marginTop="@dimen/spacing_16"
+                android:layout_marginBottom="@dimen/spacing_16">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/vehicle_category"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="@dimen/spacing_32"
+                    android:layout_marginTop="20dp"
+                    android:hint="@string/vehicle_category" />
+
+            </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/visit_button"
