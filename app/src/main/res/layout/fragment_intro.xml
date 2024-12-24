@@ -45,7 +45,7 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/calculate_date_button"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_width="250dp"
+            android:layout_width="400dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="30dp"
             android:layout_marginTop="16dp"
@@ -68,16 +68,14 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/visit_button"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_width="250dp"
+            android:layout_width="400dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="30dp"
             android:layout_marginBottom="16dp"
             android:background="@drawable/fading_bg_btn"
             android:text="@string/visit_button_text_name"
             android:textColor="@color/white"
-            app:cornerRadius="20dp"
-            app:rippleColor="@color/white"
-            app:strokeColor="@color/black" />
+            app:backgroundTint="@drawable/fading_bg_btn"/>
 
     </LinearLayout>
 
