@@ -56,7 +56,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/government_car_input"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:layout_marginHorizontal="@dimen/spacing_32"
                 android:layout_marginTop="20dp"
@@ -76,7 +76,7 @@
                 android:id="@+id/vehicle_category"
                 style="@style/Widget.Material3.TextInputEditText.OutlinedBox"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:layout_marginHorizontal="@dimen/spacing_32"
                 android:layout_marginTop="20dp"
@@ -93,11 +93,10 @@
             android:layout_height="60dp"
             android:layout_marginHorizontal="@dimen/spacing_32"
             android:layout_marginBottom="16dp"
-            android:background="@drawable/fading_bg"
+            android:background="@drawable/fading_bg_btn"
             android:text="@string/calculate_date"
             android:textColor="@color/white"
             app:cornerRadius="20dp"
-            app:rippleColor="@color/white"
             tools:ignore="TextSizeCheck,TextContrastCheck" />
 
         <androidx.appcompat.widget.AppCompatTextView

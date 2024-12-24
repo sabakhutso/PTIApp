@@ -21,18 +21,18 @@
     <LinearLayout
         android:id="@+id/button_container"
         android:layout_width="444dp"
-        android:layout_height="266dp"
+        android:layout_height="300dp"
         android:gravity="center_horizontal"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="4dp"
-        tools:ignore="MissingConstraints">
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="4dp">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/container_image_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="187dp"
+            android:layout_height="102dp"
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="30dp"
             android:src="@drawable/car_image"
@@ -52,7 +52,7 @@
             android:backgroundTint="@color/white"
             android:text="@string/calculate_date"
             android:textColor="@color/black"
-            app:cornerRadius="5dp"
+            app:cornerRadius="20dp"
             app:rippleColor="@color/white"
             app:strokeColor="@color/black" />
 
@@ -62,7 +62,8 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="@string/suggestion_text"
-            android:textColor="@color/black" />
+            android:textColor="@color/white"
+            android:textStyle="bold" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/visit_button"
@@ -71,10 +72,10 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="30dp"
             android:layout_marginBottom="16dp"
-            android:backgroundTint="#6BD5D7"
+            android:background="@drawable/fading_bg_btn"
             android:text="@string/visit_button_text_name"
             android:textColor="@color/white"
-            app:cornerRadius="5dp"
+            app:cornerRadius="20dp"
             app:rippleColor="@color/white"
             app:strokeColor="@color/black" />
 
