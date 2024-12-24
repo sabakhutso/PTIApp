@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#6BD5D7"
+    android:background="@drawable/fading_bg"
     tools:context=".MainActivity">
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -21,127 +21,122 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="TextContrastCheck" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/ptiDescription"
+
+    <LinearLayout
+        android:id="@+id/button_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="16dp"
-        android:gravity="center"
-        android:text="@string/description"
-        android:textColor="#F0EAEA"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ptiHeaderTextView"
-        tools:ignore="TextContrastCheck" />
+        android:animateLayoutChanges="true"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ptiHeaderTextView"
+        app:layout_constraintVertical_bias="0.3"
+        tools:layout_editor_absoluteX="0dp">
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/material_card_container"
-        android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:layout_margin="@dimen/spacing_16"
-        app:cardCornerRadius="@dimen/spacing_12"
-        app:cardElevation="4dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ptiDescription">
 
-        <LinearLayout
-            android:id="@+id/button_container"
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/container_date_finder"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:animateLayoutChanges="true"
-            android:gravity="center_horizontal"
-            android:orientation="vertical">
+            android:layout_marginHorizontal="@dimen/spacing_16"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="20dp"
+            android:text="@string/calculate_pti_date"
+            android:textAlignment="center"
+            android:textColor="#F0EAEA"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/material_card_container"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ptiDescription"
+            app:layout_constraintVertical_bias="0"
+            tools:ignore="SpUsage,TextSizeCheck" />
 
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/container_date_finder"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/government_car_input"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/spacing_16"
-                android:layout_marginTop="30dp"
-                android:layout_marginBottom="20dp"
-                android:text="@string/pti_date_finder"
-                android:textAlignment="center"
-                android:textColor="#000000"
-                android:textSize="20dp"
-                app:layout_constraintBottom_toTopOf="@+id/material_card_container"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ptiDescription"
-                app:layout_constraintVertical_bias="0"
-                tools:ignore="SpUsage,TextSizeCheck" />
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/government_car_input"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginHorizontal="@dimen/spacing_32"
-                    android:layout_marginTop="20dp"
-                    android:hint="@string/license_plate" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/spacing_16"
-                android:layout_marginBottom="@dimen/spacing_16">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/vehicle_category"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginHorizontal="@dimen/spacing_32"
-                    android:layout_marginTop="20dp"
-                    android:hint="@string/vehicle_category" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/visit_button"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
                 android:layout_marginHorizontal="@dimen/spacing_32"
-                android:layout_marginBottom="16dp"
-                android:backgroundTint="#6BD5D7"
-                android:text="@string/calculate_date"
-                android:textColor="@color/white"
-                app:cornerRadius="5dp"
-                app:rippleColor="@color/white"
-                app:strokeColor="@color/black"
-                tools:ignore="TextSizeCheck,TextContrastCheck" />
+                android:layout_marginTop="20dp"
+                android:background="@color/white"
+                android:hint="@string/license_plate"
+                app:cornerRadius="20dp" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/error_text"
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_16"
+            android:layout_marginBottom="@dimen/spacing_16">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/vehicle_category"
+                style="@style/Widget.Material3.TextInputEditText.OutlinedBox"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/spacing_16"
-                android:text="@string/general_error_text"
-                android:textAlignment="center"
-                android:textColor="#DE1010"
-                android:textSize="16sp"
-                android:visibility="gone"
-                app:layout_constraintBottom_toTopOf="@+id/material_card_container"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ptiDescription"
-                app:layout_constraintVertical_bias="0"
-                tools:ignore="SpUsage,TextSizeCheck" />
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="@dimen/spacing_32"
+                android:layout_marginTop="20dp"
+                android:background="@color/white"
+                android:hint="@string/vehicle_category"
+                app:cornerRadius="20dp" />
 
-        </LinearLayout>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/visit_button"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginHorizontal="@dimen/spacing_32"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/fading_bg"
+            android:text="@string/calculate_date"
+            android:textColor="@color/white"
+            app:cornerRadius="20dp"
+            app:rippleColor="@color/white"
+            tools:ignore="TextSizeCheck,TextContrastCheck" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/error_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/spacing_16"
+            android:text="@string/general_error_text"
+            android:textAlignment="center"
+            android:textColor="#DE1010"
+            android:textSize="16sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/material_card_container"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ptiDescription"
+            app:layout_constraintVertical_bias="0"
+            tools:ignore="SpUsage,TextSizeCheck" />
 
 
-    </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/spacing_15"
+        android:gravity="center"
+        android:text="@string/hot_line"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+    </TextView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

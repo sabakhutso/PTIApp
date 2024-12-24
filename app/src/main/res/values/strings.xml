@@ -17,4 +17,6 @@
     <string name="license_plate">სახელმწიფო ნომერი</string>
     <string name="vehicle_category">ავტომობილის კატეგორია</string>
     <string name="general_error_text">დაფიქსირდა ტექნიკური შეცდომა, თავიდან ცადეთ</string>
+    <string name="calculate_pti_date">გამოთვალე პტი თარიღი</string>
+    <string name="hot_line">ცხელი ხაზი 0322047979</string>
 </resources>
