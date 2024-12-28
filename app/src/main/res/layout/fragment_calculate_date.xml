@@ -20,14 +20,16 @@
 
     <LinearLayout
         android:id="@+id/button_container"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="439dp"
+        android:layout_height="296dp"
         android:animateLayoutChanges="true"
         android:gravity="center_horizontal"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="0dp">
+        tools:ignore="VisualLintBounds">
 
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -51,18 +53,18 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            app:cornerRadius="40dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/government_car_input"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginHorizontal="@dimen/spacing_32"
                 android:layout_marginTop="20dp"
                 android:background="@color/white"
-                android:hint="@string/license_plate"
-                app:cornerRadius="20dp" />
+                android:hint="@string/license_plate"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -92,11 +94,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginHorizontal="@dimen/spacing_32"
-            android:layout_marginBottom="16dp"
-            android:background="@drawable/fading_bg_btn"
+            android:layout_marginBottom="@dimen/spacing_16"
             android:text="@string/calculate_date"
             android:textColor="@color/white"
-            app:backgroundTint="@drawable/fading_bg_btn"/>
+            android:background="@drawable/fading_bg_btn"
+            app:backgroundTintMode="add"
+            tools:ignore="VisualLintButtonSize" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/error_text"
@@ -112,10 +115,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ptiDescription"
-            app:layout_constraintVertical_bias="0"
-            tools:ignore="SpUsage,TextSizeCheck" />
-
-
+            app:layout_constraintVertical_bias="0"/>
     </LinearLayout>
 
     <TextView

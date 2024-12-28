@@ -4,10 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#6BD5D7"
+    android:background="@drawable/fading_bg"
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/pti_logo"
+        android:layout_width="250dp"
+        android:layout_height="90dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/pti_logo" />
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/material_card_container"
@@ -50,7 +58,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="@dimen/spacing_16"
-                    android:hint="@string/email" />
+                    android:hint="@string/email"
+                    tools:ignore="VisualLintTextFieldSize" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -94,13 +103,14 @@
                 android:layout_marginHorizontal="@dimen/spacing_16"
                 android:layout_marginTop="@dimen/spacing_16"
                 android:layout_marginBottom="10dp"
+                android:background="@drawable/fading_bg_btn"
                 android:text="@string/log_in"
                 android:textColor="@color/white"
                 android:textStyle="bold"
-                app:backgroundTint="#6BD5D7"
-                app:cornerRadius="5dp"
+                app:backgroundTintMode="add"
                 app:rippleColor="@color/white"
-                app:strokeColor="@color/black" />
+                app:strokeColor="@color/black"
+                tools:ignore="VisualLintButtonSize" />
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 </FrameLayout>
