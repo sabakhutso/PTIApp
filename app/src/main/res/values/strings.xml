@@ -19,4 +19,9 @@
     <string name="general_error_text">დაფიქსირდა ტექნიკური შეცდომა, თავიდან ცადეთ</string>
     <string name="calculate_pti_date">გამოთვალე პტი თარიღი</string>
     <string name="hot_line">ცხელი ხაზი 0322047979</string>
+    <string name="pti_price">ინსპექტირების საფასური: </string>
+    <string name="pti_date">პტი თარიღი:</string>
+    <string name="valid_until">მოქმედების ვადა:</string>
+    <string name="pti_license_plate">სახელმწიფო ნომერი:</string>
+    <string name="x_button">X</string>
 </resources>
