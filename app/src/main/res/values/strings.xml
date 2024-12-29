@@ -24,4 +24,5 @@
     <string name="valid_until">მოქმედების ვადა:</string>
     <string name="pti_license_plate">სახელმწიფო ნომერი:</string>
     <string name="x_button">X</string>
+    <string name="inspected">ინსპექტირებულია</string>
 </resources>
