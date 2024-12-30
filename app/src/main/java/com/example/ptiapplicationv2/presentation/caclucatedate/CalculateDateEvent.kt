@@ -4,6 +4,7 @@ import android.content.Context
 import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.navigation.NavController
+import com.example.ptiapplicationv2.R
 import com.example.ptiapplicationv2.databinding.FragmentCalculateDateBinding
 import com.example.ptiapplicationv2.domain.model.CalculateDeadLineResult.SagencyResultDomain.ErrorDomain
 import com.example.ptiapplicationv2.domain.model.CalculateDeadLineResult.SagencyResultDomain.SagencyResult
@@ -32,7 +33,7 @@ interface CalculateDateEvent {
             binding: FragmentCalculateDateBinding
         ) {
             super.apply(navController, context, binding)
-            Toast.makeText(context, "Success navigation", Toast.LENGTH_LONG).show()
+            navController.navigate(R.id.action_calculateDateFragment_to_calculatedDateFragment)
         }
     }
 

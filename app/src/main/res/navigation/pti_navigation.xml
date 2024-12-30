@@ -22,12 +22,31 @@
         android:id="@+id/calculateDateFragment"
         android:name="com.example.ptiapplicationv2.presentation.caclucatedate.CalculateDateFragment"
         android:label="calculate_date_fragment"
-        tools:layout="@layout/fragment_calculate_date" />
+        tools:layout="@layout/fragment_calculate_date" >
+        <action
+            android:id="@+id/action_calculateDateFragment_to_calculatedDateFragment"
+            app:destination="@id/calculatedDateFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/authorizationFragment"
         android:name="com.example.ptiapplicationv2.presentation.user_authorization.AuthorizationFragment"
         android:label="AuthorizationFragment"
         tools:layout="@layout/fragment_user_authorization" />
+
+    <fragment
+        android:id="@+id/calculatedDateFragment"
+        android:name="com.example.ptiapplicationv2.presentation.calculated_date.FragmentCalculatedDate"
+        android:label="calculated_date"
+        tools:layout="@layout/fragment_calculated_date">
+        <action
+            android:id="@+id/action_calculatedDateFragment_to_ptiIntroFragment"
+            app:destination="@id/ptiIntroFragment" />
+        <action
+            android:id="@+id/action_calculatedDateFragment_to_authorizationFragment"
+            app:destination="@id/authorizationFragment" />
+    </fragment>
+
+
 
 </navigation>

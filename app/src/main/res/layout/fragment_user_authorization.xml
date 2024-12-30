@@ -111,6 +111,20 @@
                 app:rippleColor="@color/white"
                 app:strokeColor="@color/black"
                 tools:ignore="VisualLintButtonSize" />
+
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/spacing_15"
+        android:gravity="center_horizontal"
+        android:text="@string/hot_line"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_marginTop="960dp">
+
+    </TextView>
 </FrameLayout>
+
