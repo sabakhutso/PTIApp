@@ -25,4 +25,7 @@
     <string name="pti_license_plate">სახელმწიფო ნომერი:</string>
     <string name="x_button">X</string>
     <string name="inspected">ინსპექტირებულია</string>
+    <string name="change_password">პაროლის ცვლილება</string>
+    <string name="change_password_text">პაროლის შესაცვლელად, საჭიროა ჩაწეროთ ელ-ფოსტის მისამართი რომლითაც დარეგისტრირებული ხართ საიტზე</string>
+    ><string name="next_button">შემდეგი</string>
 </resources>
